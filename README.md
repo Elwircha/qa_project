@@ -1,7 +1,37 @@
-# QA Project
-This repository contains manual and automated tests for logging into the **Sauce Demo** application.
+# QA Project for saucedemo.com
 
-# Requirements
+This is a test project to demonstrate manual and automated testing skills for a QA portfolio.
+
+## Features
+
+- Manual test cases (login, negative scenarios, cart functionality)
+- Bug reports (UI and functional bugs)
+- Automated UI tests using WebDriverIO + Mocha/Chai
+- Page Object Model (POM) structure
+- Coming soon: CI integration with GitHub Actions and Allure reports
+
+### Project Structure
+QA_PROJECT/  
+├── automation/  
+│ ├── artifacts/ # Screenshots, test reports, and other test artifacts  
+│ ├── node_modules/ # Project dependencies (ignored by Git)  
+│ ├── src/  
+│ │ ├── configs/  
+│ │ │ └── wdio.conf.js # Main WebDriverIO configuration file  
+│ │ ├── helpers/  
+│ │ │ └── testData.js # Input data and test constants  
+│ │ ├── pageobjects/  
+│ │ │ ├── page.js # Base Page Object class  
+│ │ │ └── login.page.js # Login Page Object  
+│ │ └── test/specs/  
+│ │ └── tests.js # Test scenarios (Mocha/Chai)  
+├── manual/  
+│ └── test_cases.md # Manual test cases written in Markdown  
+├── package.json # Project dependencies and scripts  
+├── package-lock.json # Exact versions of installed dependencies  
+├── README.md # Project documentation  
+
+## Requirements
 To run the tests, you need the following tools installed:
 
 - **Node.js** (v14 or higher) and **npm**
@@ -12,7 +42,7 @@ To run the tests, you need the following tools installed:
 1. **Clone the repository**:
 
     ```bash
-    git clone https://github.com/your-username/aqa_project.git
+    git clone https://github.com/your-username/qa_project.git
     ```
 
 2. **Install dependencies**:
@@ -48,50 +78,6 @@ To run the tests, you need the following tools installed:
     ```
 
 ---
-### Project composition
-`/aqa_project/`  
-├── `/artifacts/`  # Folder for saving screenshots and other artifacts (e.g. videos)  
-├── `/node_modules/`  
-├── `/src/`  
-│   ├── `/configs/`    # Folder for storing various configurations  
-│   │   └── `/wdio.conf.js`   # WebDriverIO configuration files  
-│   ├── `/helpers/`    # Utilities and test data  
-│   │   └── `/testData.js`  
-│   ├── `/pageobjects/`    # Page Object Model (POM)   
-│   │   ├── `/page.js`    # Page to go to the start page  
-│   │   └── `/login.page.js`  # Login page  
-│   ├── `/test/`  
-│   │   ├── `/specs/`  
-│   │   │   └── `/login.spec.js`  # Base test file for login page  
-├── `/package.json`  
-├── `/package-lock.json`  
-└── `/README.md`  
-
-
-### Test Cases
-
-I'll start from positive scenario and after check negative:
-
-1. **UserStory_1 Successful login with correct credentials**:
-   - Type credentials in username which are under "Accepted usernames are:" section.
-   - Enter password wich are under "Password for all users:" section.
-   - Click on Login button
-   - Validate URL, it should be change on "https://www.saucedemo.com/inventory.html".
-
-2. **UserStory_2 Test Login form with empty credentials**:
-   - Type any credentials into "Username" and "Password" fields.
-   - Clear the inputs.
-   - Click on Login button.
-   - Check the error messages: **"Epic sadface: Username is required"**.
-
-3. **UserStory_3 Test Login form with credentials by passing Username**:
-   - Type credentials in username which are under "Accepted usernames are:" section.
-   - Enter any password.
-   - Clear the "Password" input.
-   - Click on Login button.
-   - Check the error messages: **"Epic sadface: Password is required"**.
-
-
 ## Contact
 
 Created by [Elvira Sereda][def]
