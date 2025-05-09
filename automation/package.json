@@ -1,0 +1,16 @@
+{
+  "name": "aqa-project",
+  "private": "true",
+  "main": "index.js",
+  "scripts": {
+    "test": "wdio run ./src/configs/wdio.conf.js"
+  },
+  "author": "Elvira Sereda",
+  "type": "commonjs",
+  "devDependencies": {
+    "@wdio/cli": "^9.12.7",
+    "@wdio/local-runner": "^9.12.7",
+    "@wdio/mocha-framework": "^9.12.6",
+    "chai": "^5.2.0"
+  }
+}
