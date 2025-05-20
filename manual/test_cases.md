@@ -1,8 +1,8 @@
 ## Test Cases for `saucedemo` app
 
 **ID:** TC_UI_01  
-**Title:** User logs in with valid username and password  
-**Priority:** P1  
+**Title:** Successful login  
+**Priority:** P0  
 **Preconditions:**  
 - Browser is open
 - User is on the login page at `https://www.saucedemo.com/`  
@@ -91,7 +91,7 @@
 
 **ID:** TC_UI_06  
 **Title:**  User can add item at the cart  
-**Priority:** P1    
+**Priority:** P0    
 **Preconditions:**  
 - Browser is open
 - User [Username: *standard_user* ; password: *secret_sauce*] is on the inventory page `https://www.saucedemo.com/inventory.html` 
