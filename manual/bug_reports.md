@@ -5,7 +5,7 @@
 **Priority**: P3  
 **Severity**: Medium  
 
-**Steps to reproduce:**
+**Steps to reproduce:**  
 1. Open https://www.saucedemo.com/
 2. Enter *problem_user* in the Username field
 3. Enter *secret_sauce* in the Password field
@@ -14,10 +14,10 @@
 6. Look at the images  
 
 **Expected result**  
-- successful login, the inventory page displays pictures of items corresponding to the item name (for example, like *"standard_user"*)  
+- Successful login, the inventory page displays pictures of items corresponding to the item name (for example, like *"standard_user"*)  
 
-**Actual result**
-- successful login, inventory page has incorrect images for each items  
+**Actual result**  
+- Successful login, inventory page has incorrect images for each items  
 
 **Browser/ Software version**  
 - OS: Windows 10  
@@ -35,7 +35,7 @@
 **Priority**: P1  
 **Severity**: High  
 
-**Steps to reproduce:**
+**Steps to reproduce:**  
 1. Open https://www.saucedemo.com/
 2. Enter *standard_user* in the Username field
 3. Enter *secret_sauce* in the Password field
@@ -49,7 +49,7 @@
 **Expected result**  
 - Forbidden to enter numbers in these fields  
 
-**Actual result**
+**Actual result**  
 - Proceed to the next step to complete the order  
 
 **Browser/ Software version**  
@@ -63,7 +63,7 @@
 
 ---
   
-**Name:** Fields *First Name, Last Name, Zip/Postal Code* have no character limit
+**Name:** Fields *First Name, Last Name, Zip/Postal Code* have no character limit  
 **Description:** When placing an order and filling in the fields: *First Name, Last Name, Zip/Postal Code*, you can enter characters without restrictions  
 **Priority**: P1  
 **Severity**: High  
@@ -82,7 +82,7 @@
 **Expected result**  
 - Error message "Character limit exceeded"  
 
-**Actual result**
+**Actual result**  
 - There is no error message or prompt to indicate that the input is invalid
 
 **Browser/ Software version**  
