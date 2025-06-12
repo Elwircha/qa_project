@@ -48,7 +48,14 @@ exports.config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'chrome'
+        browserName: 'chrome',
+        'goog:chromeOptions': {
+            args: [
+                '--disable-blink-features=PasswordCredentialManagement',
+                '--disable-features=AutofillServerCommunication',
+                '--headless=new',
+            ]
+        }
     }, {
         browserName: 'firefox'
     }, {
@@ -89,7 +96,7 @@ exports.config = {
     baseUrl: 'https://www.saucedemo.com',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 1000,
+    waitforTimeout: 10000,
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
