@@ -1,9 +1,12 @@
+const data = require('../../helpers/testData');
+const basePage = require('../../pageobjects/basePage');
+const loginPage = require('../../pageobjects/login.page');
+
 describe('Test for login page', () => {
     beforeEach(async () => {
-        await browser.url('https://www.saucedemo.com/');
+        await loginPage.open('');
     });
 
-    //clear the browser after each test
     afterEach(async () => {
         await browser.execute(() => {
             localStorage.clear();
@@ -13,81 +16,39 @@ describe('Test for login page', () => {
     });
 
     it ('should log in successfully and redirect to inventory page', async () => {
-        const usernameField = await $('#user-name');
-        const passwordField = await $('#password');
-        const loginButton = await $('#login-button');
-        await usernameField.setValue('standard_user');
-        await passwordField.setValue('secret_sauce');
-        await loginButton.click();
-        //check that inventory page loaded
-        await browser.waitUntil (async () => {
-            return (await browser.getUrl()) === 'https://www.saucedemo.com/inventory.html';
-        })
-        //check that current URL is the same as expected
+        await loginPage.login('standard_user', 'secret_sauce');
         await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
     });
 
     it ('should not login with empty fields of username and password', async () => {
-        const usernameField = await $('#user-name');
-        const passwordField = await $('#password');
-        const loginButton = await $('#login-button');
-        await usernameField.setValue('');
-        await passwordField.setValue('');
-        await loginButton.waitForClickable();
-        await loginButton.click();
-        const errorElement = await $('[data-test="error"]');
-        await errorElement.waitForDisplayed();
-        const errorText = await errorElement.getText();
+        await loginPage.login('', '');
+        await loginPage.isErrorDisplayed();
+        const errorText = await loginPage.getErrorText();
         console.log('Error text found:', errorText);
-        await expect(errorElement).toBeDisplayed();
         await expect(errorText).toContain('Username is required');
     });
 
         it ('should not login for blocked user', async () => {
-        const usernameField = await $('#user-name');
-        const passwordField = await $('#password');
-        const loginButton = await $('#login-button');
-        await usernameField.setValue('locked_out_user');
-        await passwordField.setValue('secret_sauce');
-        await loginButton.waitForClickable();
-        await loginButton.click();
-        const errorElement = await $('[data-test="error"]');
-        await errorElement.waitForDisplayed();
-        const errorText = await errorElement.getText();
+        await loginPage.login('locked_out_user', 'secret_sauce');
+        await loginPage.isErrorDisplayed();
+        const errorText = await loginPage.getErrorText();
         console.log('Error text found:', errorText);
-        await expect(errorElement).toBeDisplayed();
         await expect(errorText).toContain('Sorry, this user has been locked out.');
     });
 
         it ('should not login without username', async () => {
-        const usernameField = await $('#user-name');
-        const passwordField = await $('#password');
-        const loginButton = await $('#login-button');
-        await usernameField.setValue('');
-        await passwordField.setValue('secret_sauce');
-        await loginButton.waitForClickable();
-        await loginButton.click();
-        const errorElement = await $('[data-test="error"]');
-        await errorElement.waitForDisplayed();
-        const errorText = await errorElement.getText();
+        await loginPage.login('', 'secret_sauce');
+        await loginPage.isErrorDisplayed();
+        const errorText = await loginPage.getErrorText();
         console.log('Error text found:', errorText);
-        await expect(errorElement).toBeDisplayed();
         await expect(errorText).toContain('Username is required');
     });
 
         it ('should not login without password', async () => {
-        const usernameField = await $('#user-name');
-        const passwordField = await $('#password');
-        const loginButton = await $('#login-button');
-        await usernameField.setValue('standard_user');
-        await passwordField.setValue('');
-        await loginButton.waitForClickable();
-        await loginButton.click();
-        const errorElement = await $('[data-test="error"]');
-        await errorElement.waitForDisplayed();
-        const errorText = await errorElement.getText();
+        await loginPage.login('standard_user', '');
+        await loginPage.isErrorDisplayed();
+        const errorText = await loginPage.getErrorText();
         console.log('Error text found:', errorText);
-        await expect(errorElement).toBeDisplayed();
         await expect(errorText).toContain('Password is required');
     });
 });
