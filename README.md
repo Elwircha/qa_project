@@ -7,9 +7,9 @@ Tested flows:
 - Checkout flow
 
 ## Artifacts
-- Checklist
-- Test cases
-- Bug reports
+- [Checklist](./manual/checklist.md)
+- [Test cases](./manual/test_cases.md)
+- [Bug reports](./manual/bug_reports.md)
 
 ## Skills
 - Test case design
@@ -18,6 +18,6 @@ Tested flows:
 - Basic test documentation structure
 
 ## Project Structure
-[/manual](./manual)
-[/automation](./automation)
-README.md
+- [manual](./manual/)
+- [automation](./automation/)
+- [README](./README.md)
