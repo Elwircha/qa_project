@@ -10,6 +10,8 @@ Tested flows:
 - [Checklist]()
 - [Test cases](./manual/test_cases.md)
 - [Bug reports](./manual/bug_reports.md)
+  
+**Results:** 6 test cases • 3 bug reports • 5 UI automated tests (WDIO)
 
 ## Skills
 - Test case design
