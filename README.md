@@ -18,6 +18,6 @@ Tested flows:
 - Basic test documentation structure
 
 ## Project Structure
-/manual
-/automation
+[/manual](./manual)
+[/automation](./automation)
 README.md
