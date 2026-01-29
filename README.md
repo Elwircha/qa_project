@@ -7,9 +7,9 @@ Tested flows:
 - Checkout flow
 
 ## Artifacts
-- [Checklist](./manual/checklist.md)
+- [Checklist]()
 - [Test cases](./manual/test_cases.md)
-- [Bug reports](./manual/bug_reports.md)
+- [Bug reports]([./manual/bug_reports.md))
 
 ## Skills
 - Test case design
